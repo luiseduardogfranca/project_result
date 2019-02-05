@@ -139,15 +139,6 @@
             </div>
             
           </section>
-          
-          <section>
-            <div class="box-blockquote fragment fade-up">
-              <h1 class="title-blockquote">Identificação da região nodular</h1>
-              <div class="blockquote">
-                </p>Buscamos identificar possíveis regiões com nódulos no pulmão com a aplicação de técnicas de Processamento de Imagem em conjunto com algoritimos de Deep Learning.</p>
-              </div>
-            </div>
-          </section>
         </section>
 
         <!-- second step -->
@@ -159,30 +150,6 @@
                 <p>Aplicação de técnicas de P.I. para extração do parênquima.</p>
               </div>
             </div>
-          </section>
-
-          <section>
-
-            <div class="box-blockquote fragment fade-up">
-              <h1 class="title-blockquote">Python</h1>
-              <div class="blockquote">
-                </p>Foi escolhido Python como linguagem de desenvolvimento devido a todo suporte oferecido por ela nos trabalhos feitos dentro de Machine Learning.</p>
-              </div>
-            </div>
-
-            <div class="box-blockquote fragment fade-up">
-                <h1 class="title-blockquote">Tensorflow + Keras</h1>
-                <div class="blockquote">
-                  </p>Utilizamos essas libraries por todo suporte oferecido na estruturação de redes neurais, bem como a possibilidade de acompanhamento de todo o processo em um trainamento por meios de log's.</p>
-                </div>
-             </div>
-
-             <div class="box-blockquote fragment fade-up">
-                <h1 class="title-blockquote">scikit-image</h1>
-                <div class="blockquote">
-                  </p>Essa library é de grande valia para ser utilizada em conjunto com técnicas de processamento de imagem na linguagem Python.</p>
-                </div>
-             </div>
           </section>
         </section>
 
@@ -196,144 +163,6 @@
               </div>
             </div>
           </section>
-
-          <section>
-            <div class="box-blockquote fragment fade-up">
-              <h1 class="title-blockquote">U-Net</h1>
-              <div class="blockquote">
-                <p>Tentamos uma abordagem com a <a href="https://arxiv.org/abs/1505.04597">U-Net</a>, porém ela tem uma estrutura desenvolvida para segmentação. Sendo assim não compatível com o nosso objetivo, que é encontrar a região de um possível nódulo na imagem.</p>
-              </div>
-              <figure style="text-align: center;">
-                <img class="style-image" src="./images/u-net.png" alt="U-Net" width="450">
-              </figure>
-            </div>
-          </section>
-
-          <section>
-            <div class="box-blockquote fragment fade-up">
-              <h1 class="title-blockquote">CNN</h1>
-              <div class="blockquote">
-                <p>Utilizamos a <a href="https://skymind.ai/wiki/convolutional-network">CNN</a> e percebemos uma acurácia semelhante da que obtivemos com a U-Net, porém com um custo computacional menor devido a sua estrutura.</p>
-              </div>
-              <figure style="text-align: center;">
-                <img class="style-image" src="./images/cnn.png" alt="CNN" width="600">
-              </figure>
-            </div>
-          </section>
-
-          <section>
-            <div class="box-blockquote fragment fade-up">
-              <h1 class="title-blockquote">Passando a imagem inteira para a rede</h1>
-              <div class="blockquote">
-                <p>Nossa primeira tentativa tanto na Unet como na CNN foi passar a imagem inteira para a rede neural como entrada.</p>
-              </div>
-              <figure style="text-align: center;">
-                <img class="style-image" src="./images/original.png" alt="Lung image" width="350">
-              </figure>
-            </div>
-          </section>
-
-          <section>
-            <div class="box-blockquote fragment fade-up">
-              <h1 class="title-blockquote">Usar máscara binária como label</h1>
-              <div class="blockquote">
-                <p>
-                  Criado uma máscara a partir da imagem segmentada para servir como label para a rede neural.
-                </p>
-              </div>
-              <figure style="text-align: center;">
-                <img class="style-image" src="./images/image_landmark.png" alt="Lung image" width="300" height="300" >
-                <img class="style-image" src="./images/mask.png" alt="Lung image" width="300" height="300">
-              </figure>
-            </div>
-          </section>
-
-          <section>
-            <h2 class="title-slide">E falhas...</h2>
-          </section>
-
-          <section>
-            <div class="box-blockquote fragment fade-up">
-              <h1 class="title-blockquote">Desbalanceamento</h1>
-              <div class="blockquote">
-                <p>Maior quantidade de informações ficou concentrada nas regiões externas da imagem (escuras), tendo um desbalanceamento na distribuição de informações da imagem;</p>
-              </div>
-            </div>
-
-            <div class="box-blockquote fragment fade-up">
-              <h1 class="title-blockquote">Overfitting</h1>
-              <div class="blockquote">
-                <p>Devido ao desbalanceamento das imagens a rede acabou aprendendo muito sobre as informações de treino e ganhando deficiência na predição em outras imagens</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- table -->
-          <section>
-            <div class="box-blockquote fragment fade-up">
-              <h1 style="text-align: center; margin-bottom: 100px;" class="title-blockquote">Configurações da rede no treinamento</h1>
-              <table class="table">
-                <thead> 
-                  <tr>
-                    <th>Epochs</th>
-                    <th>Batch Size</th>
-                    <th>Learning Rate</th>
-                    <th>Feedback</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>10</td>
-                    <td>3</td>
-                    <td>1e-4</td>
-                    <td>Com coordenadas únicas, se saiu mal</td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>3</td>
-                    <td>1e-4</td>
-                    <td>Sem coordenadas únicas, se saiu mal</td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>3</td>
-                    <td>1e-4</td>
-                    <td>Sem coordenadas únicas, se saiu mal</td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>2</td>
-                    <td>1e-4</td>
-                    <td>Sem coordenadas únicas, se saiu mal</td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>2</td>
-                    <td>1e-5</td>
-                    <td>Sem coordenadas únicas, se saiu mal</td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>2</td>
-                    <td>1e-6</td>
-                    <td>Sem coordenadas únicas, demonstrou um leve sinal de aprendizado</td>
-                  </tr>
-                  <tr>
-                    <td>10</td>
-                    <td>1</td>
-                    <td>1e-4</td>
-                    <td>Sem coordenadas únicas, resultado insatisfatório</td>
-                  </tr>
-                  <tr>
-                    <td>50</td>
-                    <td>2</td>
-                    <td>1e-6</td>
-                    <td>Sem coordenadas únicas, resultado insatisfatório</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
         </section>
 
         <!-- fourth step -->
@@ -344,42 +173,9 @@
               <div class="blockquote">
                 <p>Utilização de uma CNN para predição do parênquima.</p>
               </div>
-          </section>
-          <section>
-            <div class="box-blockquote fragment fade-up">
-              <h1 class="title-blockquote">Processamento de imagem</h1>
-              <div class="blockquote">
-                <p>Selecionar a região mais próxima do pulmão com o auxílio da library <a href="https://scikit-image.org/">scikit-image</a> com objetivo de diminuir o desbalanceamento.</p>
-              </div>
-            </div>
-
-            <div class="box-blockquote fragment fade-up">
-              <h1 class="title-blockquote">Ténicas de processamento de imagem</h1>
-              <div class="blockquote blockquote-list">
-                <ul>
-                  <li>Filtro gaussiano;</li>
-                  <li>Detector de arestas;</li>
-                  <li>Detector morfológico;</li>
-                  <li>Regionprop;</li>
-                </ul>
-              </div>
-            </div>
-            
-          </section>
-
-          <section>
-            <div class="box-blockquote fragment fade-up">
-              <h1 class="title-blockquote">Resultado alcançado</h1>
-              <div class="blockquote">
-                <p>Com todas as técnicas aplicadas foi possível detectar as possíveis regiões próximas ao parênquima do pulmão.</p>
-              </div>
-              <figure style="text-align: center;">
-                <img class="style-image" src="./images/step-to-step.png" alt="Step to step" width="600">
-              </figure>
             </div>
           </section>
         </section>
-
 
         <!-- fifth step -->
         <section>
@@ -387,10 +183,29 @@
             <div class="box-blockquote">
               <h2 class="title-blockquote">5º parte</h2>
               <div class="blockquote">
-                <p>Utilização de uma CNN de patchs 64x64 com um número de filtros maior para predição da área do nódulo.</p>
+                <p>Aplicação de patchs de demasiados tamanhos na CNN para encontrar um melhor resultado.</p>
               </div>
+            </div>
           </section>
         </section>
+
+        <!-- fifth step -->
+        <section>
+          <section>
+            <div class="box-blockquote">
+              <h2 class="title-blockquote">6º parte</h2>
+              <div class="blockquote">
+                <p>Utilização de uma CNN de patchs 64x64 com um número de filtros maior para predição da área do nódulo.</p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- utilizam dataset "luna" 
+        usam a curva FROC como métrica de sensibilidade
+        sensibilidade: é a proporção de verdadeiros positivos: a  capacidade do sistema em predizer corretamente a condição para casos que realmente a têm.
+          VP / (VP + FP)
+        score final é a média de todos scores analisados a parte -->
 
         <!-- papers step -->
         <section>
@@ -401,16 +216,107 @@
                 <p>Automatic lung nodule detection using a 3D deep convolutional neural network combined with a multi-scale prediction
                 strategy in chest CTs</p>
               </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h2 class="title-blockquote">Dataset</h2>
+              <div class="blockquote">
+                <p><a href="https://luna16.grand-challenge.org/data/">LUNA16</a></p>
+              </div>
+            </div>
+            <div class="box-blockquote fragment fade-up">
+              <h2 class="title-blockquote">Métrica</h2>
+              <div class="blockquote">
+                <p>Utilizam a curva FROC como métrica de sensibilidade</p>
+              </div>
+            </div>
+            <div class="box-blockquote fragment fade-up">
+              <h2 class="title-blockquote">Sensibilidade</h2>
+              <div class="blockquote">
+                <p>É a proporção de verdadeiros positivos: a capacidade do sistema em predizer corretamente a condição para casos
+                  que
+                  realmente a têm.</p>
+                <p style="text-align:center;"><strong>VP / (VP + FP)</strong></p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h2 class="title-blockquote">Estrutura</h2>
+              <div class="blockquote">
+                <figure style="text-align: center;">
+                  <img class="style-image" src="./images/estrutura-paper1.jpg" alt="Step to step" width="1000">
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h2 class="title-blockquote">Resultados</h2>
+              <div class="blockquote">
+                <figure style="text-align: center;">
+                  <img class="style-image" src="./images/resultados-paper1.jpg" alt="Step to step" width="1000">
+                </figure>
+              </div>
+            </div>
           </section>
         </section>
 
         <section>
           <section>
             <div class="box-blockquote">
-              <h2 class="title-blockquote">Paper CNN 2D</h2>
+              <h2 class="title-blockquote">Paper CNN 3D</h2>
               <div class="blockquote">
                 <p>S4ND: Single-Shot Single-Scale Lung Nodule Detection</p>
               </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h2 class="title-blockquote">Dataset</h2>
+              <div class="blockquote">
+                <p><a href="https://luna16.grand-challenge.org/data/">LUNA16</a></p>
+              </div>
+            </div>
+            <div class="box-blockquote fragment fade-up">
+              <h2 class="title-blockquote">Métrica</h2>
+              <div class="blockquote">
+                <p>Utilizam a curva FROC como métrica de sensibilidade</p>
+              </div>
+            </div>
+            <div class="box-blockquote fragment fade-up">
+              <h2 class="title-blockquote">Sensibilidade</h2>
+              <div class="blockquote">
+                <p>É a proporção de verdadeiros positivos: a capacidade do sistema em predizer corretamente a condição para casos que
+                realmente a têm.</p>
+                <p style="text-align:center;"><strong>VP / (VP + FP)</strong></p>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h2 class="title-blockquote">Estrutura</h2>
+              <div class="blockquote">
+                <figure style="text-align: center;">
+                  <img class="style-image" src="./images/estrutura-paper2.jpg" alt="Step to step" width="600">
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h2 class="title-blockquote">Resultados</h2>
+              <div class="blockquote">
+                <figure style="text-align: center;">
+                  <img class="style-image" src="./images/resultados-paper2.jpg" alt="Step to step" width="600">
+                </figure>
+              </div>
+            </div>
           </section>
         </section>
 
