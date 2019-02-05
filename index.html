@@ -1,0 +1,379 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./revealjs/css/reveal.css">
+    <link rel="stylesheet" href="./revealjs/css/theme/white.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style media="screen">
+      .title{
+        text-align: justify;
+      }
+  
+      .title-slide{
+        text-transform: none !important;
+      }
+
+      .panel{
+        background-color: rgb(228, 228, 237);
+        padding: 20px !important;
+        border-radius: 10px;
+      }
+
+      .style-image{
+        border-style: none !important;
+        box-shadow: none !important;
+        background-color: transparent !important;
+        box-shadow: -2px 5px 20px #333 !important;
+      }
+
+      .subtitle{
+        padding-left: 15px !important;
+        border-left: 2px black solid !important;
+      }
+      
+      .box-blockquote{
+        text-align: justify !important;
+        padding-left: 5% !important;
+        margin-bottom: 5% !important;
+      }
+
+      .title-blockquote{
+        font-size: 30pt !important;
+        text-transform: none !important;
+        color: rgba(0, 0, 0, 0.8) !important;
+      }
+
+      .blockquote{
+        padding-left: 2% !important; 
+        margin-left: 5%  !important; 
+        border-left: 1px rgba(0, 0, 0, 0.8) solid !important;
+        font-size: 20pt !important;
+        color: rgba(0, 0, 0, 0.6) !important;
+      }
+
+      .blockquote-list{
+        border-left: none !important;
+      }
+      
+      table{
+        font-size: 15pt !important;
+        /* border: 1px solid #ddd !important; */
+        /* width: 100%; */
+      }
+
+      .table th {
+        background-color: rgb(32, 32, 32);
+        color: white;
+      }
+
+      .table tr:hover {background-color:#d6d6d6;}
+      
+      .table td{    
+        border: 1px solid  rgb(32, 32, 32, 0.5) !important;
+        text-align: left !important;
+      }
+
+      .table{
+        box-shadow: -2px 5px 20px #333 !important;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        
+        <!-- first slide -->
+        <section>
+          <div class="title">
+            <h1>Projeto</h1>
+             <div class="subtitle">
+               <span >Diagnóstico de nódulos pulmonares com o uso de Deep Learning </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- team -->
+        <section>
+          <table style="color:rgb(29, 35, 38); font-size:20pt;">
+            <tr>
+              <td>
+                <div class="panel">
+                  <p><span class="icons">&#xf2b9; </span>Émerson Silva</p>
+                  <p><span class="icons">&#xf19d; </span>Universidade Federal de Alagoas</p>
+                  <p><span class="icons">&#xf0e0; </span>emersonjose877@gmail.com</p>
+                  <p><span class="icons">&#xf09b; </span> <a href="https://www.github.com/silvaemerson">silvaemerson</a></p>
+                </div>
+              </td>
+
+              <td>
+                <div class="panel">
+                  <p><span class="icons">&#xf2b9; </span> Luís Eduardo G. França</p>
+                  <p><span class="icons">&#xf19d; </span>Universidade Federal de Alagoas</p>
+                  <p><span class="icons">&#xf0e0; </span>luiseduardogfranca@gmail.com</p>
+                  <p><span class="icons">&#xf09b; </span> <a href="https://www.github.com/luiseduardogfranca"> luiseduardogfranca</a></p>
+                </div>
+              </td>
+
+            </tr>
+          </table>
+
+        </section>
+
+        <!-- introduction -->
+        <section>
+          <section>
+            <h2 class="title-slide">Introdução</h2>
+          </section>
+          
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h1 class="title-blockquote">Identificação da região nodular</h1>
+              <div class="blockquote">
+                </p>Buscamos identificar possíveis regiões com nódulos no pulmão com a aplicação de técnicas de Processamento de Imagem em conjunto com algoritimos de Deep Learning.</p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- tecnologies used -->
+        <section>
+          <section>
+            <h2 class="title-slide">Tecnologias utilizadas</h2>
+          </section>
+
+          <section>
+
+            <div class="box-blockquote fragment fade-up">
+              <h1 class="title-blockquote">Python</h1>
+              <div class="blockquote">
+                </p>Foi escolhido Python como linguagem de desenvolvimento devido a todo suporte oferecido por ela nos trabalhos feitos dentro de Machine Learning.</p>
+              </div>
+            </div>
+
+            <div class="box-blockquote fragment fade-up">
+                <h1 class="title-blockquote">Tensorflow + Keras</h1>
+                <div class="blockquote">
+                  </p>Utilizamos essas libraries por todo suporte oferecido na estruturação de redes neurais, bem como a possibilidade de acompanhamento de todo o processo em um trainamento por meios de log's.</p>
+                </div>
+             </div>
+
+             <div class="box-blockquote fragment fade-up">
+                <h1 class="title-blockquote">scikit-image</h1>
+                <div class="blockquote">
+                  </p>Essa library é de grande valia para ser utilizada em conjunto com técnicas de processamento de imagem na linguagem Python.</p>
+                </div>
+             </div>
+          </section>
+        </section>
+
+        <!-- aproacches and failures -->
+        <section>
+          <section>
+            <h2 class="title-slide">Abordagens</h2>
+          </section>
+
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h1 class="title-blockquote">U-Net</h1>
+              <div class="blockquote">
+                <p>Tentamos uma abordagem com a <a href="https://arxiv.org/abs/1505.04597">U-Net</a>, porém ela tem uma estrutura desenvolvida para segmentação. Sendo assim não compatível com o nosso objetivo, que é encontrar a região de um possível nódulo na imagem.</p>
+              </div>
+              <figure style="text-align: center;">
+                <img class="style-image" src="./images/u-net.png" alt="U-Net" width="450">
+              </figure>
+            </div>
+          </section>
+
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h1 class="title-blockquote">CNN</h1>
+              <div class="blockquote">
+                <p>Utilizamos a <a href="https://skymind.ai/wiki/convolutional-network">CNN</a> e percebemos uma acurácia semelhante da que obtivemos com a U-Net, porém com um custo computacional menor devido a sua estrutura.</p>
+              </div>
+              <figure style="text-align: center;">
+                <img class="style-image" src="./images/cnn.png" alt="CNN" width="600">
+              </figure>
+            </div>
+          </section>
+
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h1 class="title-blockquote">Passando a imagem inteira para a rede</h1>
+              <div class="blockquote">
+                <p>Nossa primeira tentativa tanto na Unet como na CNN foi passar a imagem inteira para a rede neural como entrada.</p>
+              </div>
+              <figure style="text-align: center;">
+                <img class="style-image" src="./images/original.png" alt="Lung image" width="350">
+              </figure>
+            </div>
+          </section>
+
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h1 class="title-blockquote">Usar máscara binária como label</h1>
+              <div class="blockquote">
+                <p>
+                  Criado uma máscara a partir da imagem segmentada para servir como label para a rede neural.
+                </p>
+              </div>
+              <figure style="text-align: center;">
+                <img class="style-image" src="./images/image_landmark.png" alt="Lung image" width="300" height="300" >
+                <img class="style-image" src="./images/mask.png" alt="Lung image" width="300" height="300">
+              </figure>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="title-slide">E falhas...</h2>
+          </section>
+
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h1 class="title-blockquote">Desbalanceamento</h1>
+              <div class="blockquote">
+                <p>Maior quantidade de informações ficou concentrada nas regiões externas da imagem (escuras), tendo um desbalanceamento na distribuição de informações da imagem;</p>
+              </div>
+            </div>
+
+            <div class="box-blockquote fragment fade-up">
+              <h1 class="title-blockquote">Overfitting</h1>
+              <div class="blockquote">
+                <p>Devido ao desbalanceamento das imagens a rede acabou aprendendo muito sobre as informações de treino e ganhando deficiência na predição em outras imagens</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- table -->
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h1 style="text-align: center; margin-bottom: 100px;" class="title-blockquote">Configurações da rede no treinamento</h1>
+              <table class="table">
+                <thead> 
+                  <tr>
+                    <th>Epochs</th>
+                    <th>Batch Size</th>
+                    <th>Learning Rate</th>
+                    <th>Feedback</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>10</td>
+                    <td>3</td>
+                    <td>1e-4</td>
+                    <td>Com coordenadas únicas, se saiu mal</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>3</td>
+                    <td>1e-4</td>
+                    <td>Sem coordenadas únicas, se saiu mal</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>3</td>
+                    <td>1e-4</td>
+                    <td>Sem coordenadas únicas, se saiu mal</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>1e-4</td>
+                    <td>Sem coordenadas únicas, se saiu mal</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>1e-5</td>
+                    <td>Sem coordenadas únicas, se saiu mal</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>1e-6</td>
+                    <td>Sem coordenadas únicas, demonstrou um leve sinal de aprendizado</td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>1</td>
+                    <td>1e-4</td>
+                    <td>Sem coordenadas únicas, resultado insatisfatório</td>
+                  </tr>
+                  <tr>
+                    <td>50</td>
+                    <td>2</td>
+                    <td>1e-6</td>
+                    <td>Sem coordenadas únicas, resultado insatisfatório</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+
+        <!-- working in progress -->
+        <section>
+          <section>
+            <h2 class="title-slide">Trabalho em progresso</h2>
+          </section>
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h1 class="title-blockquote">Processamento de imagem</h1>
+              <div class="blockquote">
+                <p>Selecionar a região mais próxima do pulmão com o auxílio da library <a href="https://scikit-image.org/">scikit-image</a> com objetivo de diminuir o desbalanceamento.</p>
+              </div>
+            </div>
+
+            <div class="box-blockquote fragment fade-up">
+              <h1 class="title-blockquote">Ténicas de processamento de imagem</h1>
+              <div class="blockquote blockquote-list">
+                <ul>
+                  <li>Filtro gaussiano;</li>
+                  <li>Detector de arestas;</li>
+                  <li>Detector morfológico;</li>
+                  <li>Regionprop;</li>
+                </ul>
+              </div>
+            </div>
+            
+          </section>
+
+          <section>
+            <div class="box-blockquote fragment fade-up">
+              <h1 class="title-blockquote">Resultado alcançado</h1>
+              <div class="blockquote">
+                <p>Com todas as técnicas aplicadas foi possível detectar as possíveis regiões próximas ao parênquima do pulmão.</p>
+              </div>
+              <figure style="text-align: center;">
+                <img class="style-image" src="./images/step-to-step.png" alt="Step to step" width="600">
+              </figure>
+            </div>
+          </section>
+        </section>
+
+        <!-- biography  -->
+        <!-- <section>
+            <section>
+                <h2 class="title-slide">Bibliografia</h2>
+            </section>
+        </section> -->
+      </div>
+    </div>
+
+    <script src="./revealjs/lib/js/head.min.js"></script>
+    <script src="./revealjs/js/reveal.js"></script>
+    <script type="text/javascript">
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        transition: 'slide'
+      })
+    </script>
+  </body>
+
+
+</html>
